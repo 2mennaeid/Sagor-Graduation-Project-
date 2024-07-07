@@ -3,10 +3,8 @@
 #include <ArduinoJson.h>
 #include "Servo.h"
 #include <HX711_ADC.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS           14  // d5
+
 #define MQTT_PUMP_TOPIC        "django/main-sagor-topic/"
 #define SERVER_PORT            1883
 #define gateServoPin           12  // d6
@@ -20,22 +18,21 @@
 #define HX711_CLK_PIN          2   // d4
 
 const char* mqttTopic = "django/main/";
-const char* ssid = "Redmi 10C";
-const char* password = "123456789zZ";
+const char* ssid = "iPhone";
+const char* password = "xp123456789xp";
 const char* mqttServer = "test.mosquitto.org";
 const char* sagor_Id = "Sagor123";
 int weight;
 String json_sensors_data;
-String res;
-float Celsius = 0;
+String ph_val;
+String Temp_val;
 WiFiClient espClient;
 PubSubClient client;
 Servo gateServo;
 Servo botServo;
 
 HX711_ADC LoadCell(HX711_DT_PIN, HX711_CLK_PIN);
-OneWire oneWire(ONE_WIRE_BUS);
-DallasTemperature sensors(&oneWire);
+
 
 JsonDocument doc;
 JsonObject farm = doc.createNestedObject("farm");
@@ -148,7 +145,6 @@ void setup() {
     botServo.attach(botServoPin);
     gateServo.write(topStart);
     botServo.write(botStart);
-    sensors.begin();
     LoadCell.begin();
     LoadCell.start(2000);
     LoadCell.setCalFactor(CALIBRATION);
@@ -167,12 +163,11 @@ unsigned long lastMillis = millis();
 void loop() {
     if (Serial.available() > 0) 
     {
-        res = Serial.readString();
-        ph_sensor_reading["value"] = res;
-        sensors.requestTemperatures();
-       Celsius = sensors.getTempCByIndex(0);
-        temprature_sensor_reading["value"] = Celsius;
-        Serial.println(res);
+        ph_val = Serial.readString();
+        ph_sensor_reading["value"] = ph_val;
+        delay(1000);
+        Temp_val = Serial.readString();
+        temprature_sensor_reading["value"] = Temp_val;
         serializeJson(doc, json_sensors_data);
         if (client.connected()) 
         {
@@ -192,7 +187,7 @@ void loop() {
       Serial.println("No data");
    
     }
-    delay(8000);
+    delay(7000);
     client.loop();
   } 
     
