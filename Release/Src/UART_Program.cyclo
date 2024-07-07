@@ -1,0 +1,5 @@
+../Src/UART_Program.c:18:6:UART_vInit	1
+../Src/UART_Program.c:36:6:UART_vSendByte	2
+../Src/UART_Program.c:45:6:UART_vReceiveByte	2
+../Src/UART_Program.c:52:6:UART_vSendStream	5
+../Src/UART_Program.c:74:6:UART_vReceiveStream	3

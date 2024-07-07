@@ -1,0 +1,8 @@
+../Src/ADC_Prog.c:20:6:ADC_enuInit	8	static
+../Src/ADC_Prog.c:68:6:ADC_SelectChannel	8	static
+../Src/ADC_Prog.c:96:6:ADC_vSetSampleTime	0	static
+../Src/ADC_Prog.c:111:6:ADC_vStartConversion	0	static
+../Src/ADC_Prog.c:118:6:ADC_vPollingSystem	0	static
+../Src/ADC_Prog.c:129:7:ADC_enuRead	0	static
+../Src/ADC_Prog.c:136:6:ADC_enuAnalogRead	8	static
+../Src/ADC_Prog.c:152:6:ADC_vStopConversion	0	static

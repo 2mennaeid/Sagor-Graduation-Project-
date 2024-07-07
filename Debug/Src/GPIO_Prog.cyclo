@@ -1,0 +1,5 @@
+../Src/GPIO_Prog.c:18:6:GPIO_enuSetPinMode	7
+../Src/GPIO_Prog.c:72:6:GPIO_enuSetPinValue	5
+../Src/GPIO_Prog.c:106:6:GPIO_enuGetPinValue	4
+../Src/GPIO_Prog.c:127:6:GPIO_enuTogglePin	3
+../Src/GPIO_Prog.c:148:6:GPIO_enuLockPin	5

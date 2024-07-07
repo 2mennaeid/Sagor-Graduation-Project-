@@ -1,0 +1,3 @@
+../Src/RCC_Prog.c:12:6:RCC_voidSelectClock	0	static
+../Src/RCC_Prog.c:38:6:RCC_voidEnablePeriphralCLK	0	static
+../Src/RCC_Prog.c:49:6:RCC_voidDisablePeriphralCLK	0	static

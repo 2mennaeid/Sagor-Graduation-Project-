@@ -1,0 +1,6 @@
+../Src/DS18B20.c:13:6:DS18B20_set_pin_output	0	static
+../Src/DS18B20.c:21:6:DS18B20_set_pin_input	0	static
+../Src/DS18B20.c:29:6:DS18B20_start_sensor	24	static
+../Src/DS18B20.c:48:6:DS18B20_writeData	16	static
+../Src/DS18B20.c:69:6:DS18B20_read_data	32	static
+../Src/DS18B20.c:91:5:DS18B20_read_temp_celsius	16	static

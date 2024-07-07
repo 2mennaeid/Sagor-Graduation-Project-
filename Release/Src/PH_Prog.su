@@ -1,0 +1,4 @@
+../Src/PH_Prog.c:15:6:pH_enuInit	8	static
+../Src/PH_Prog.c:37:6:pH_enuReadValue	24	static
+../Src/PH_Prog.c:83:6:ConvertFloatToString	8	static
+../Src/PH_Prog.c:117:6:ConverFracToString	24	static
